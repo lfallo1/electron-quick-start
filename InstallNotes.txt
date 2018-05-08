@@ -1,0 +1,27 @@
+------------------------------
+------ WINDOWS -------
+------------------------------
+## if build tools are not installed ##
+1) npm install --global --production windows-build-tools
+2) navigate to your %USER%/.windows-build-tools/pythonXX and copy the path
+3) set the env variable with 'setx PYTHON=above_path
+
+## rebuilding native node modules (build tools must be installed) ##
+npm i -g electron-rebuild
+electron-rebuild -w [your-module] ##i.e., electron-rebuild -w bcrypt
+
+
+--------------------------
+---- DEV NOTES ----
+--------------------------
+
+## open devtools when app launches ##
+mainWindow.openDevTools()
+
+## enable hot reloading ##
+npm i --save-dev electron-reload
+require('electron-reload')(__dirname)
+
+## Installing Devron ##
+npm i --save-dev devtron
+require('devtron').install() ##run this in the console tab of your app
